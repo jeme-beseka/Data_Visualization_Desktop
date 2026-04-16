@@ -405,7 +405,7 @@ This project is provided as-is for educational purposes.
 
 ## 📞 Support
 
-For issues, questions, or suggestions, please refer to the documentation files or contact the development team.
+For issues, questions, or suggestions, please refer to the documentation files or contact the development team. @ j.beseka@gmail.com
 
 ---
 

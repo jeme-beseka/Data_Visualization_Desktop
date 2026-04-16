@@ -26,7 +26,7 @@ jpackage ^
     --icon assets\Data-Visual-Icon.ico ^
     --vendor "Jeme Beseka" ^
     --description "Transform Your Data Into Beautiful Charts" ^
-    --app-version 2.0 ^
+    --app-version 3.3 ^
     --win-console
 
 if %ERRORLEVEL% NEQ 0 (
