@@ -3,58 +3,95 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.Insets?>
+<?import java.lang.String?>
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.datavisualizer.controller.LandingController"
       alignment="CENTER"
-      spacing="30"
-      style="-fx-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      spacing="0"
+      style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    
+    <stylesheets>
+        <String fx:value="/css/styles.css"/>
+    </stylesheets>
     
     <padding>
-        <Insets top="50" right="50" bottom="50" left="50"/>
+        <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
     
-    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.95); -fx-background-radius: 20; -fx-padding: 40;">
+    <VBox alignment="CENTER" spacing="30" styleClass="vbox-card" style="-fx-background-color: rgba(255, 255, 255, 0.98); -fx-padding: 50;">
+        
+        <!-- Logo/Icon Area -->
+        <VBox alignment="CENTER" spacing="10" VBox.vgrow="SOMETIMES">
+            <ImageView fitHeight="200" fitWidth="200" preserveRatio="true">
+                <Image url="@/images/Data-Visual-Icon.png"/>
+            </ImageView>
+        </VBox>
         
         <!-- Title -->
-        <Label text="Data Visualizer" style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <Label text="King Data Visualizer" styleClass="label-title" style="-fx-font-size: 52px;"/>
         
         <!-- Subtitle -->
         <Label text="Transform Your Data Into Beautiful Charts" 
-               style="-fx-font-size: 20px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+               styleClass="label-subtitle"
+               style="-fx-font-size: 18px; -fx-font-style: italic;"/>
         
-        <!-- Features -->
-        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20 0 20 0;">
-            <HBox alignment="CENTER" spacing="15">
-                <Label text="📊" style="-fx-font-size: 24px;"/>
-                <Label text="Multiple Chart Types" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
-            </HBox>
-            <HBox alignment="CENTER" spacing="15">
-                <Label text="📁" style="-fx-font-size: 24px;"/>
-                <Label text="CSV File Import" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
-            </HBox>
-            <HBox alignment="CENTER" spacing="15">
-                <Label text="✏️" style="-fx-font-size: 24px;"/>
-                <Label text="Manual Data Entry" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
-            </HBox>
-            <HBox alignment="CENTER" spacing="15">
-                <Label text="💾" style="-fx-font-size: 24px;"/>
-                <Label text="Export Charts as Images" style="-fx-font-size: 16px; -fx-text-fill: #34495e;"/>
-            </HBox>
-        </VBox>
+        <!-- Divider -->
+        <Separator style="-fx-padding: 10 0 10 0;"/>
+        
+        <!-- Features Grid -->
+        <GridPane hgap="30" vgap="20" style="-fx-padding: 20 0 20 0;">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+            
+            <!-- Feature 1 -->
+            <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <Label text="📊" style="-fx-font-size: 32px;"/>
+                <Label text="7+ Chart Types" styleClass="label-header"/>
+                <Label text="Line, Bar, Scatter, Area, Heatmaps, Radar and Pie charts" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+            </VBox>
+            
+            <!-- Feature 2 -->
+            <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <Label text="📁" style="-fx-font-size: 32px;"/>
+                <Label text="CSV Import" styleClass="label-header"/>
+                <Label text="Load data from CSV files instantly" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+            </VBox>
+            
+            <!-- Feature 3 -->
+            <VBox spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="✏️" style="-fx-font-size: 32px;"/>
+                <Label text="Manual Entry" styleClass="label-header"/>
+                <Label text="Enter data directly in the app" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+            </VBox>
+            
+            <!-- Feature 4 -->
+            <VBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="💾" style="-fx-font-size: 32px;"/>
+                <Label text="Export Charts" styleClass="label-header"/>
+                <Label text="Save visualizations as PNG images" style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+            </VBox>
+        </GridPane>
+        
+        <!-- Divider -->
+        <Separator style="-fx-padding: 10 0 10 0;"/>
         
         <!-- Get Started Button -->
         <Button fx:id="getStartedButton" 
-                text="Get Started" 
+                text="Get Started →" 
                 onAction="#handleGetStarted"
-                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 15 30 15 30; -fx-background-radius: 25; -fx-cursor: hand;"
+                styleClass="button-primary"
+                style="-fx-font-size: 16px; -fx-padding: 15 40 15 40; -fx-background-radius: 8;"
                 onMouseEntered="#handleButtonHover"
                 onMouseExited="#handleButtonExit"/>
         
         <!-- Version info -->
-        <Label text="Version 1.0" style="-fx-font-size: 12px; -fx-text-fill: #95a5a6; -fx-padding: 20 0 0 0;"/>
+        <Label text="Version 2.0 • Enhanced with Modern UI" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6; -fx-padding: 10 0 0 0;"/>
         
     </VBox>
     

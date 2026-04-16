@@ -30,11 +30,11 @@ public class LandingController {
     
     @FXML
     private void handleButtonHover() {
-        getStartedButton.setStyle("-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 15 30 15 30; -fx-background-radius: 25; -fx-cursor: hand;");
+        getStartedButton.setStyle("-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 40 15 40; -fx-background-radius: 8; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);");
     }
     
     @FXML
     private void handleButtonExit() {
-        getStartedButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 15 30 15 30; -fx-background-radius: 25; -fx-cursor: hand;");
+        getStartedButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 15 40 15 40; -fx-background-radius: 8; -fx-cursor: hand;");
     }
 }
