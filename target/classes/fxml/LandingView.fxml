@@ -7,43 +7,48 @@
 <?import javafx.geometry.Insets?>
 <?import java.lang.String?>
 
-<VBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.datavisualizer.controller.LandingController"
-      alignment="CENTER"
-      spacing="0"
-      style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.datavisualizer.controller.LandingController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox alignment="CENTER"
+          spacing="0"
+          style="-fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
     
-    <stylesheets>
-        <String fx:value="/css/styles.css"/>
-    </stylesheets>
+        <stylesheets>
+            <String fx:value="/css/styles.css"/>
+        </stylesheets>
     
-    <padding>
-        <Insets top="40" right="40" bottom="40" left="40"/>
-    </padding>
+        <padding>
+            <Insets top="25" right="40" bottom="25" left="40"/>
+        </padding>
     
-    <VBox alignment="CENTER" spacing="30" styleClass="vbox-card" style="-fx-background-color: rgba(255, 255, 255, 0.98); -fx-padding: 50;">
+        <VBox alignment="CENTER" spacing="18" styleClass="vbox-card" style="-fx-background-color: rgba(255, 255, 255, 0.98); -fx-padding: 30;">
         
         <!-- Logo/Icon Area -->
-        <VBox alignment="CENTER" spacing="10" VBox.vgrow="SOMETIMES">
-            <ImageView fitHeight="200" fitWidth="200" preserveRatio="true">
+        <VBox alignment="CENTER" spacing="10">
+            <ImageView fitHeight="140" fitWidth="140" preserveRatio="true">
                 <Image url="@/images/Data-Visual-Icon.png"/>
             </ImageView>
         </VBox>
         
         <!-- Title -->
-        <Label text="King Data Visualizer" styleClass="label-title" style="-fx-font-size: 52px;"/>
+        <Label text="King Data Visualizer" styleClass="label-title" style="-fx-font-size: 40px;"/>
         
         <!-- Subtitle -->
         <Label text="Transform Your Data Into Beautiful Charts" 
                styleClass="label-subtitle"
-               style="-fx-font-size: 18px; -fx-font-style: italic;"/>
+               style="-fx-font-size: 16px; -fx-font-style: italic;"/>
         
         <!-- Divider -->
-        <Separator style="-fx-padding: 10 0 10 0;"/>
+        <Separator style="-fx-padding: 5 0 5 0;"/>
         
         <!-- Features Grid -->
-        <GridPane hgap="30" vgap="20" style="-fx-padding: 20 0 20 0;">
+        <GridPane hgap="30" vgap="15" style="-fx-padding: 10 0 10 0;">
             <columnConstraints>
                 <ColumnConstraints percentWidth="50"/>
                 <ColumnConstraints percentWidth="50"/>
@@ -79,20 +84,22 @@
         </GridPane>
         
         <!-- Divider -->
-        <Separator style="-fx-padding: 10 0 10 0;"/>
+        <Separator style="-fx-padding: 5 0 5 0;"/>
         
         <!-- Get Started Button -->
         <Button fx:id="getStartedButton" 
                 text="Get Started →" 
                 onAction="#handleGetStarted"
                 styleClass="button-primary"
-                style="-fx-font-size: 16px; -fx-padding: 15 40 15 40; -fx-background-radius: 8;"
+                style="-fx-font-size: 16px; -fx-padding: 12 35 12 35; -fx-background-radius: 8;"
                 onMouseEntered="#handleButtonHover"
                 onMouseExited="#handleButtonExit"/>
         
         <!-- Version info -->
-        <Label text="Version 2.0 • Enhanced with Modern UI" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6; -fx-padding: 10 0 0 0;"/>
+        <Label text="Version 3.3 • Enhanced with Modern UI" style="-fx-font-size: 11px; -fx-text-fill: #95a5a6; -fx-padding: 5 0 0 0;"/>
         
-    </VBox>
+        </VBox>
     
-</VBox>
+    </VBox>
+
+</ScrollPane>
